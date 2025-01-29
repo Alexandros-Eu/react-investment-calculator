@@ -17,29 +17,27 @@ function App() {
     setInputData((oldData => {
       if(e.target.name === "INITIAL INVESTMENT")
       {
-        return {...oldData, initialInvestment: e.target.value}
+        return {...oldData, initialInvestment: parseInt(e.target.value)}
       }
 
       if(e.target.name === "ANNUAL INVESTMENT")
       {
-        return {...oldData, annualInvestment: e.target.value}
+        return {...oldData, annualInvestment: parseInt(e.target.value)}
       }
 
       if(e.target.name === "EXPECTED RETURN")
       {
-        return {...oldData, expectedReturn: e.target.value}
+        return {...oldData, expectedReturn: parseInt(e.target.value)}
       }
 
       if(e.target.name === "DURATION")
       {
-        return {...oldData, duration: e.target.value}
+        return {...oldData, duration: parseInt(e.target.value)}
       }
     }))
 
 
   }
-
-  console.log(calculateInvestmentResults(inputData));
 
 
   return (
@@ -53,7 +51,7 @@ function App() {
           <Input label="EXPECTED RETURN" onInput={handleChange} value={inputData.expectedReturn}/>
           <Input label="DURATION" onInput={handleChange} value={inputData.duration}/>
         </div>
-        <Results/>
+        <Results annualData={calculateInvestmentResults(inputData)}/>
     </div>
   )
 }
