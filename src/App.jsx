@@ -6,10 +6,10 @@ import { useState } from 'react';
 
 function App() {
   const [inputData, setInputData] = useState({
-    initialInvestment: 0,
-    annualInvestment: 0,
-    expectedReturn: 0,
-    duration: 0
+    initialInvestment: "",
+    annualInvestment: "",
+    expectedReturn: "",
+    duration: ""
   });
 
   function handleChange(e)

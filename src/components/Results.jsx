@@ -15,7 +15,7 @@ export default function Results({annualData})
                     <th>Invested Capital</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className="center">
                 {annualData.map((el) => {
                     return <tr key={el.year}>
                         <td>{el.year}</td>
