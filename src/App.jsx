@@ -14,29 +14,33 @@ function App() {
 
   function handleChange(e)
   {
-    setInputData((oldData => {
-      if(e.target.name === "INITIAL INVESTMENT")
-      {
-        return {...oldData, initialInvestment: parseInt(e.target.value)}
-      }
+    switch(e.target.name)
+    {
+      case "INITIAL INVESTMENT":
+        setInputData(oldData => {
+          return {...oldData, initialInvestment: parseInt(e.target.value)}
+        })
+        break;
 
-      if(e.target.name === "ANNUAL INVESTMENT")
-      {
-        return {...oldData, annualInvestment: parseInt(e.target.value)}
-      }
+      case "ANNUAL INVESTMENT":
+        setInputData(oldData => {
+          return {...oldData, annualInvestment: parseInt(e.target.value)}
+        })
+        break;
 
-      if(e.target.name === "EXPECTED RETURN")
-      {
-        return {...oldData, expectedReturn: parseInt(e.target.value)}
-      }
+      case "EXPECTED RETURN":
+        setInputData(oldData => {
+          return {...oldData, expectedReturn: parseInt(e.target.value)}
+        })
+        break;
 
-      if(e.target.name === "DURATION")
-      {
-        return {...oldData, duration: parseInt(e.target.value)}
-      }
-    }))
-
-
+      case "DURATION":
+        e.target.value < 1 ? alert("You have entered an invalid duration.") :
+          setInputData(oldData => {
+            return { ...oldData, duration: parseInt(e.target.value) }
+          })
+        break;
+    }
   }
 
 
