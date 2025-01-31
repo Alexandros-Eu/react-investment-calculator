@@ -6,7 +6,7 @@ export default function Results({annualData})
 
     return (
         <table id="result">
-            <thead>
+            <thead className="center">
                 <tr>
                     <th>Year</th>
                     <th>Investment Value</th>

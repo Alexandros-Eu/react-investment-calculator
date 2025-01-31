@@ -47,13 +47,15 @@ function App() {
   return (
     <div>
         <Header/>
-        <div className="input-group">
-          <Input label="INITIAL INVESTMENT" onInput={handleChange} value={inputData.initialInvestment}/>
-          <Input label="ANNUAL INVESTMENT" onInput={handleChange} value={inputData.annualInvestment}/>
-        </div>
-        <div className="input-group">
-          <Input label="EXPECTED RETURN" onInput={handleChange} value={inputData.expectedReturn}/>
-          <Input label="DURATION" onInput={handleChange} value={inputData.duration}/>
+        <div id="user-input">
+          <p className="input-group">
+            <Input label="INITIAL INVESTMENT" onInput={handleChange} value={inputData.initialInvestment}/>
+            <Input label="ANNUAL INVESTMENT" onInput={handleChange} value={inputData.annualInvestment}/>
+          </p>
+          <p className="input-group">
+            <Input label="EXPECTED RETURN" onInput={handleChange} value={inputData.expectedReturn}/>
+            <Input label="DURATION" onInput={handleChange} value={inputData.duration}/>
+          </p>
         </div>
         <Results annualData={calculateInvestmentResults(inputData)}/>
     </div>
