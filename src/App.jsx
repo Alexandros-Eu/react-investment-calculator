@@ -11,6 +11,8 @@ function App() {
     expectedReturn: "",
     duration: ""
   });
+  
+  const invalidInput = inputData.duration <= 0;
 
   function handleChange(e)
   {
@@ -57,7 +59,8 @@ function App() {
             <Input label="DURATION" onInput={handleChange} value={inputData.duration}/>
           </p>
         </div>
-        <Results annualData={calculateInvestmentResults(inputData)}/>
+        {!invalidInput && <p>You have entered an invalid duration.</p>}
+        {invalidInput && <Results annualData={calculateInvestmentResults(inputData)}/>} 
     </div>
   )
 }
