@@ -16,34 +16,6 @@ function App() {
 
   function handleChange(e)
   {
-    // switch(e.target.name)
-    // {
-    //   case "INITIAL INVESTMENT":
-    //     setInputData(oldData => {
-    //       return {...oldData, initialInvestment: parseInt(e.target.value)}
-    //     })
-    //     break;
-
-    //   case "ANNUAL INVESTMENT":
-    //     setInputData(oldData => {
-    //       return {...oldData, annualInvestment: parseInt(e.target.value)}
-    //     })
-    //     break;
-
-    //   case "EXPECTED RETURN":
-    //     setInputData(oldData => {
-    //       return {...oldData, expectedReturn: parseInt(e.target.value)}
-    //     })
-    //     break;
-
-    //   case "DURATION":
-    //     e.target.value < 1 ? alert("You have entered an invalid duration.") :
-    //       setInputData(oldData => {
-    //         return { ...oldData, duration: parseInt(e.target.value) }
-    //       })
-    //     break;
-    // }
-
     setInputData(oldData => {
       return {...oldData, [e.target.name]: parseInt(e.target.value)}
     })
